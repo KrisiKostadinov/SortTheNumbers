@@ -1,0 +1,16 @@
+<div class="container">
+    <h2 class="title-text">Sort The Numbers</h2>
+    <div class="form-window">
+        <form [formGroup]="playForm" (ngSubmit)="play()">
+            <input type="text" formControlName="difficult" placeholder="4x4" min="4" max="16" autofocus>
+            <i class="arrow" [ngClass]="{'arrow-down': isShowDataList, 'arrow-up': !isShowDataList}" (click)="showSwitchDataList()"></i>
+            <ul [@window] *ngIf="isShowDataList">
+                <li (click)="selectItem($event.target.textContent)" value="3x3">3x3</li>
+                <li (click)="selectItem($event.target.textContent)" value="4x3">4x3</li>
+                <li (click)="selectItem($event.target.textContent)" value="4x4">4x4</li>
+                <li (click)="selectItem($event.target.textContent)" value="5x5">5x5</li>
+            </ul>
+            <button class="btn-play">Play</button>
+        </form>
+    </div>
+</div>

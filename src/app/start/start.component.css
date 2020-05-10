@@ -1,0 +1,115 @@
+* {
+    outline: none;
+    font-family: fantasy;
+}
+
+button {
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container > h2 {
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.container .form-window {
+    width: 40%;
+    min-width: 270px;
+    text-align: center;
+}
+
+.container .form-window .title-text {
+    font-size: 2em;
+}
+
+.container .form-window input {
+    width: 100%;
+    padding: 0.7em 2em;
+    border: none;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 2em;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 2em;
+}
+
+.container .form-window .btn-play {
+    width: 20%;
+    margin-top: 2em;
+    padding: 1em;
+    border: none;
+    background-color: #1a1a1a;
+    border-radius: 2em;
+    color: #fff;
+    font-size: 1em;
+}
+
+form {
+    position: relative;
+}
+
+.container .form-window form ul {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1em;
+    box-shadow: 0 10px 7px #00000077;
+    border-radius: 6px;
+}
+
+.container .form-window form ul li {
+    padding: 1em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.container .form-window form ul li:hover {
+    background-color: #000000;
+}
+
+.arrow {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent #fff transparent;
+    transition: 100ms;
+}
+
+.arrow-down {
+    transform: rotateZ(180deg);
+}
+
+.arrow-up {
+    transform: rotateZ(0);
+}

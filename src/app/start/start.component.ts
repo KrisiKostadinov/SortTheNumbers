@@ -8,7 +8,7 @@ import { Fading } from '../animations/fading.animation';
   styleUrls: ['./start.component.css'],
   animations: [Fading]
 })
-export class StartComponent implements OnInit, OnDestroy {
+export class StartComponent implements OnInit {
 
   playForm: FormGroup;
   @Output() start:EventEmitter<string> = new EventEmitter<string>();
@@ -20,15 +20,12 @@ export class StartComponent implements OnInit, OnDestroy {
       'difficult': [''],
     });
   }
-  ngOnDestroy(): void {
-    this.start.emit('started!');
-  }
 
   ngOnInit(): void {
   }
 
   play() {
-    this.start.emit(this.playForm.value.number);
+    this.start.emit(this.playForm.value.difficult);
   }
 
   showSwitchDataList() {
@@ -37,7 +34,6 @@ export class StartComponent implements OnInit, OnDestroy {
 
   selectItem(difficult: string) {
     this.playForm.get('difficult').setValue(difficult);
-
     this.isShowDataList = false;
   }
 }

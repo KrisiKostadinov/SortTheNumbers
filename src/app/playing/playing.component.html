@@ -3,3 +3,25 @@
         <app-start (start)="start($event)"></app-start>
     </div>
 </div>
+<div *ngIf="isStart" class="level">
+    <h2>{{ seconds }}</h2>
+    <div class="playing">
+        <ul>
+            <li *ngFor="let row of board">
+                <ul>
+                    <li class="not-clickedNumber" (click)="clickNumber(col)" [ngClass]="{'clickedNumber': col <= currentNumber,'not-clickedNumber': col > currentNumber}" *ngFor="let col of row">{{ col }}</li>
+                </ul>
+            </li>
+        </ul>
+        <button class="btn back" (click)="back()">Back</button>
+    </div>
+</div>
+<div *ngIf="isCompletedLevel" class="window completed-level">
+    <h2>Level Completed!</h2>
+    <h4>Congratolations</h4>
+    <button class="btn success" (click)="back()">Next level</button>
+</div>
+<div *ngIf="isEnd" class="window end-level">
+    <h2>{{ msg }}</h2>
+    <button class="btn danger" (click)="reset()">Play again</button>
+</div>
